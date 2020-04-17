@@ -18,7 +18,7 @@ defaultContentLanguage = "en-us"
 title = "Aditya Pratap Singh"
 theme = "tranquilpeak"
 disqusShortname = "tranquilpeak"
-# googleAnalytics = "UA-123-45"
+googleAnalytics = "UA-163853308-1"
 paginate = 7
 canonifyurls = true
 
