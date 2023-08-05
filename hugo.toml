@@ -1,0 +1,35 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'Aditya Pratap Singh'
+theme = "m10c"
+
+[menu]
+    [[menu.main]]
+        identifier = "home"
+        name = "Home"
+        url = "/"
+        weight = 1
+    [[menu.main]]
+        identifier = "about"
+        name = "About"
+        url = "/about/"
+        weight = 2
+    [[menu.main]]
+        identifier = "tags"
+        name = "Tags"
+        url = "/tags/"
+        weight = 3
+
+[params]
+    author = "Aditya Pratap Singh"
+    description = "Software Engineer"
+    menu_item_separator = "|"
+    avatar = "avatar.jpg"
+    [[params.social]]
+        icon = "github"
+        name = "Github"
+        url = "https://github.com/pratapaditya1997"
+    [[params.social]]
+        icon = "twitter"
+        name = "Twitter"
+        url = "https://twitter.com/pratapaditya97_"

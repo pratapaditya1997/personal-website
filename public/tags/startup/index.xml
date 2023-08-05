@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>startup on Aditya Pratap Singh</title>
+    <link>http://example.org/tags/startup/</link>
+    <description>Recent content in startup on Aditya Pratap Singh</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 14 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/tags/startup/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to make it big in Tech - Notes from Prasanna Sankar Talk</title>
+      <link>http://example.org/posts/how_to_make_it_big_in_tech_prasanna_sankar/</link>
+      <pubDate>Sun, 14 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/how_to_make_it_big_in_tech_prasanna_sankar/</guid>
+      <description>These notes are based on the talk given by Prasanna Sankar at NIT-Trichy, which can be found here. I have compiled notes on the 6 things which Prasanna believes can help us to be more successful and generate wealth. Please note that even though I have tried to capture the essence of the talk in these notes, it is possible that they are influenced by my understanding of the talk and I may have missed some things.</description>
+    </item>
+    
+  </channel>
+</rss>

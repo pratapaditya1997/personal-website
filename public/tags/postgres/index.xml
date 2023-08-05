@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>postgres on Aditya Pratap Singh</title>
+    <link>http://example.org/tags/postgres/</link>
+    <description>Recent content in postgres on Aditya Pratap Singh</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 17 Apr 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/tags/postgres/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Postgres Database Migration</title>
+      <link>http://example.org/posts/postgres_database_migration/</link>
+      <pubDate>Fri, 17 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/postgres_database_migration/</guid>
+      <description>Often times we find ourselves in situations where we need to migrate our databases from one server to another. Sometimes the reason can be infrastructure cost-cutting in our organisation or other times you may just want to do it for fun.
+Recently, I had to do one such migration for my team&amp;rsquo;s postgreSQL databases. My plan was to copy the schemas using pg_dump, then migrating the data using foreign data wrapper utility and finally updating the destination database&amp;rsquo;s sequences using the pg_dump again.</description>
+    </item>
+    
+  </channel>
+</rss>
