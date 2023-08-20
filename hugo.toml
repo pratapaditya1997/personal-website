@@ -19,6 +19,11 @@ theme = "m10c"
         name = "Tags"
         url = "/tags/"
         weight = 3
+    [[menu.main]]
+        identifier = "favorites"
+        name = "Favorites"
+        url = "/favorites/"
+        weight = 4
 
 [params]
     author = "Aditya Pratap Singh"
@@ -33,3 +38,7 @@ theme = "m10c"
         icon = "twitter"
         name = "Twitter"
         url = "https://twitter.com/pratapaditya97_"
+    [[params.social]]
+        icon = "linkedin"
+        name = "LinkedIn"
+        url = "https://www.linkedin.com/in/pratapaditya1997/"
