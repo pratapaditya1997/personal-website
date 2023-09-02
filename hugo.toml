@@ -25,6 +25,11 @@ theme = "m10c"
         url = "/favorites/"
         weight = 4
 
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true
+
 [params]
     author = "Aditya Pratap Singh"
     description = "Software Engineer"
