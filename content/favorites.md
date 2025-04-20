@@ -10,6 +10,9 @@ title: "Favorites"
 ### Podcasts
 - [Everything is Everything](https://www.youtube.com/@amitvarma/videos) by Amit Varma & Ajay Shah
 
+### Essays
+- [Paul Graham](https://www.paulgraham.com/articles.html). Anything by Paul Graham.
+
 ### Storytellers
 These are the people I love to listen to
 - [Joy Bhattacharya](https://twitter.com/joybhattacharj)
