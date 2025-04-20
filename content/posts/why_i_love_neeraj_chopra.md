@@ -2,12 +2,8 @@
 title: "Why I love Neeraj Chopra"
 tags:
 - "sports"
-date: "2024-01-13"
+date: "2025-01-13"
 draft: false
----
-
-*(I know the year of the article should be 2025. But this is because of an ongoing bug in the theme. Tracking Github Issue [here](https://github.com/vaga/hugo-theme-m10c/issues/128)).*
-
 ---
 
 I admire all sportsmen in general, athletes a bit more & I love Neeraj Chopra the most. Excelling in sports is one of the hardest feats, especially in India. I mean he is literally the most successful individual Indian Olympian ever. And that too in a sport where we had no past success, or great players to take inspiration from, or the infrastructure. Even crossing 80 metres was an elusive dream in Indian Javelin, till not so long ago. These reasons make Neeraj admirable, but my reasons to love him go beyond the metres and the medals.
