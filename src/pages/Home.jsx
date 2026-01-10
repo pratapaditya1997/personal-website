@@ -12,7 +12,6 @@ export default function Home() {
     fetch(RSS_URL)
       .then((response) => response.json())
       .then((data) => {
-        // data.items contains the articles
         if (data.items) {
           setPosts(data.items);
         }
@@ -25,50 +24,48 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="max-w-4xl mx-auto">
+    <div className="mx-auto max-w-5xl pt-4">
+      {/* Header Section */}
       <header className="mb-12">
-        <h1 className="text-4xl font-bold text-slate-900 mb-4">
+        <h1 className="mb-4 text-4xl font-bold tracking-tight text-slate-100">
           Welcome Home 👋
         </h1>
-        <p className="text-lg text-slate-600">
-          I write about engineering, life, and building things. Here are my
-          latest essays from Substack.
+        <p className="max-w-2xl text-lg leading-relaxed text-slate-400">
+          Software Engineer. I write about engineering, life, and building
+          things. Here are my latest essays from Substack.
         </p>
       </header>
 
+      {/* Posts Section */}
       <section>
-        <h2 className="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
-          Latest Writings
-          {/* Simple badge showing count */}
+        <div className="mb-6 flex items-center justify-between">
+          <h2 className="flex items-center gap-2 text-xl font-semibold text-green-400">
+            Latest Writings
+          </h2>
           {!loading && (
-            <span className="text-sm font-normal bg-slate-200 px-2 py-1 rounded-full text-slate-600">
-              {posts.length}
+            <span className="rounded border border-slate-700 px-2 py-1 font-mono text-xs text-slate-500">
+              {posts.length} posts
             </span>
           )}
-        </h2>
+        </div>
 
         {/* Loading State */}
         {loading && (
-          <div className="flex justify-center py-20 text-blue-600">
-            <Loader2 className="animate-spin" size={48} />
+          <div className="flex justify-center py-20 text-green-400">
+            <Loader2 className="animate-spin" size={32} />
           </div>
         )}
 
-        {/* Error/Empty State */}
-        {!loading && posts.length === 0 && (
-          <p className="text-slate-500">No posts found. Check back later!</p>
-        )}
-
-        {/* Posts Grid */}
+        {/* GRID LAYOUT (2 Columns) */}
         <div className="grid gap-6 md:grid-cols-2">
           {posts.map((post) => (
             <PostCard
-              key={post.guid} // Unique ID from RSS
+              key={post.guid}
               title={post.title}
               pubDate={post.pubDate}
               link={post.link}
+              content={post.content}
               description={post.description}
-              thumbnail={post.thumbnail}
             />
           ))}
         </div>

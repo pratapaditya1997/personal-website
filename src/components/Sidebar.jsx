@@ -1,63 +1,88 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, User, Briefcase, ExternalLink } from 'lucide-react';
+import { Github, Twitter, Linkedin, Home, User, Tag, Star } from 'lucide-react';
 
 const Sidebar = () => {
   const location = useLocation();
   const isActive = (path) => location.pathname === path;
 
   const linkClass = (path) => `
-    flex items-center gap-3 p-3 rounded-lg transition-all duration-200
+    flex items-center gap-3 p-3 rounded-lg transition-all duration-200 font-medium
     ${
       isActive(path)
-        ? 'bg-blue-600 text-white shadow-md'
-        : 'text-slate-400 hover:bg-slate-800 hover:text-white'
+        ? 'text-green-400 bg-slate-800'
+        : 'text-slate-400 hover:text-green-400 hover:bg-slate-800/50'
     }
   `;
 
+  const SocialLink = ({ href, icon: Icon }) => (
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      className="text-slate-400 transition-colors duration-200 hover:text-green-400"
+    >
+      <Icon size={20} />
+    </a>
+  );
+
   return (
-    <aside className="w-64 h-screen bg-slate-900 text-white fixed left-0 top-0 flex flex-col p-6 border-r border-slate-800">
-      {/* Profile Section */}
-      <div className="flex flex-col items-center mb-10 mt-4">
-        <div className="w-24 h-24 bg-gradient-to-tr from-blue-500 to-purple-600 rounded-full mb-4 flex items-center justify-center text-3xl shadow-lg">
-          {/* Placeholder Avatar */}
-          🚀
+    <aside className="fixed top-0 left-0 flex h-screen w-64 flex-col border-r border-slate-800 bg-slate-900 p-8">
+      {/* 1. Profile Section */}
+      <div className="mb-8 flex flex-col items-center text-center">
+        <div className="group relative mb-4">
+          {/* Neon Ring Effect */}
+          <div className="absolute -inset-1 rounded-full bg-green-400 opacity-75 blur transition duration-200 group-hover:opacity-100"></div>
+
+          {/* Profile Image */}
+          <img
+            src="/avatar.jpg"
+            alt="Aditya Pratap Singh"
+            className="relative h-28 w-28 rounded-full border-4 border-slate-900 bg-slate-800 object-cover"
+          />
         </div>
-        <h1 className="text-xl font-bold text-center tracking-tight">
-          Aditya Pratap Singh
+
+        <h1 className="text-xl font-bold tracking-wide text-white">
+          Aditya Pratap <br /> Singh
         </h1>
-        <p className="text-xs text-slate-500 mt-1 uppercase tracking-widest">
+        <p className="mt-1 font-mono text-sm text-green-400">
           Software Engineer
         </p>
+
+        {/* Social Icons (Moved here) */}
+        <div className="mt-4 flex gap-5">
+          <SocialLink
+            href="https://github.com/pratapaditya1997"
+            icon={Github}
+          />
+          <SocialLink href="https://x.com/pratapaditya97_" icon={Twitter} />
+          <SocialLink href="https://www.linkedin.com/in/pratapaditya1997/" icon={Linkedin} />
+        </div>
       </div>
 
-      {/* Navigation Links */}
-      <nav className="flex flex-col gap-2 flex-1">
+      {/* 2. Navigation */}
+      <nav className="flex w-full flex-1 flex-col gap-2">
         <Link to="/" className={linkClass('/')}>
-          <Home size={20} />
-          <span className="font-medium">Home</span>
+          <Home size={18} />
+          <span>Home</span>
         </Link>
         <Link to="/about" className={linkClass('/about')}>
-          <User size={20} />
-          <span className="font-medium">About</span>
+          <User size={18} />
+          <span>About</span>
         </Link>
-        <Link to="/projects" className={linkClass('/projects')}>
-          <Briefcase size={20} />
-          <span className="font-medium">Projects</span>
+        <Link to="/tags" className={linkClass('/tags')}>
+          <Tag size={18} />
+          <span>Tags</span>
+        </Link>
+        <Link to="/favorites" className={linkClass('/favorites')}>
+          <Star size={18} />
+          <span>Favorites</span>
         </Link>
       </nav>
 
-      {/* Footer / Socials Placeholder */}
-      <div className="pt-6 border-t border-slate-800">
-        <a
-          href="https://github.com"
-          target="_blank"
-          rel="noreferrer"
-          className="flex items-center gap-3 text-sm text-slate-500 hover:text-white transition-colors"
-        >
-          <ExternalLink size={16} />
-          <span>GitHub Profile</span>
-        </a>
+      {/* 3. Footer / Status */}
+      <div className="mt-auto border-t border-slate-800 pt-6 text-center">
+        <p className="font-mono text-xs text-slate-500">© 2026 A.P.S.</p>
       </div>
     </aside>
   );
