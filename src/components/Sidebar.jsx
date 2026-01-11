@@ -47,6 +47,8 @@ const Sidebar = ({ isOpen, onClose }) => {
             <img
               src="/avatar.jpg"
               alt="Aditya Pratap Singh"
+              loading="eager"
+              fetchPriority="high"
               className="relative h-40 w-40 rounded-full border-4 border-slate-900 bg-slate-800 object-cover"
             />
           </div>
