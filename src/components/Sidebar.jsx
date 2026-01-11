@@ -2,6 +2,20 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Github, Twitter, Linkedin, Home, User, Star, X } from 'lucide-react';
 
+const SocialLink = ({ href, icon }) => {
+  const Icon = icon;
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-slate-400 hover:text-green-400 transition-colors duration-200"
+    >
+      <Icon size={24} />
+    </a>
+  );
+};
+
 const Sidebar = ({ isOpen, onClose }) => {
   const location = useLocation();
   const isActive = (path) => location.pathname === path;
@@ -14,17 +28,6 @@ const Sidebar = ({ isOpen, onClose }) => {
         : 'text-slate-400 hover:text-green-400 hover:bg-slate-800/50'
     }
   `;
-
-  const SocialLink = ({ href, icon: Icon }) => (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-slate-400 transition-colors duration-200 hover:text-green-400"
-    >
-      <Icon size={24} /> {/* Increased Icon Size */}
-    </a>
-  );
 
   return (
     <>
