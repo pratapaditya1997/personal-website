@@ -1,17 +1,17 @@
 # 📝 Project Tasks
 
 ## 🚀 Priority
-- [ ] **Content:** Write actual bio for `src/pages/About.jsx`
-- [ ] **Content:** Finalize the sections to keep in the sidebar. For e.g. remove the `Projects` section as of now.
-- [ ] **UI:** Add a mobile "Hamburger" menu for the Sidebar (currently fixed width hidden on mobile)
-- [ ] **SEO:** Update `<title>` and `<meta name="description">` in `index.html`
+- [x] **Content:** Write actual bio for `src/pages/About.jsx`
+- [x] **Content:** Finalize the sections to keep in the sidebar. For e.g. remove the `Projects` section as of now.
+- [x] **UI:** Add a mobile "Hamburger" menu for the Sidebar (currently fixed width hidden on mobile)
+- [x] **SEO:** Update `<title>` and `<meta name="description">` in `index.html`
 
 ## 🎨 Design & Polish
 - [x] Migrate from Hugo to React
 - [x] Setup Tailwind CSS v4
 - [x] Create Layout (Sidebar + Main Content)
 - [x] Integrate Substack RSS Feed
-- [ ] **Icons:** Add a favicon (replace default Vite logo)
+- [x] **Icons:** Add a favicon (replace default Vite logo)
 - [ ] **404:** Create a custom "Page Not Found" component
 - [ ] **Analytics:** Add Google Analytics or simple tracking script
 - [ ] **Content:** Add support for tagging the articles
