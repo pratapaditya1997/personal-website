@@ -1,8 +1,9 @@
 [build]
-    publish = "public"
-    command = "hugo --gc --minify"
+  # The command to build your React app
+  command = "npm run build"
+  
+  # The folder where Vite puts the finished website
+  publish = "dist"
 
-[context.production.environment]
-    HUGO_VERSION = "0.140.2"
-    HUGO_ENV = "production"
-    HUGO_ENABLEGITINFO = "true"
+[dev]
+  command = "npm run dev"
