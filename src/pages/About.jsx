@@ -1,8 +1,14 @@
 import React from 'react';
+import SEO from '../components/SEO';
 
 export default function About() {
   return (
     <div className="mx-auto max-w-3xl pt-4">
+      <SEO
+        title="About Me"
+        description="My journey from IIT to Google, and my philosophy on engineering and life."
+        url="https://pratapaditya.com/about"
+      />
       <h1 className="mb-8 flex items-center gap-3 text-3xl font-bold text-slate-100">
         About Me <span className="text-3xl">👋</span>
       </h1>

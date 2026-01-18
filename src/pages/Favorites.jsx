@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import { ExternalLink, Mic, BookOpen, Feather, Users } from 'lucide-react';
 
 const FAVORITES_DATA = [
@@ -59,6 +60,11 @@ const FAVORITES_DATA = [
 export default function Favorites() {
   return (
     <div className="mx-auto max-w-4xl pt-4">
+      <SEO
+        title="Favorites"
+        description="A curated list of my favorite essays, podcasts, and books."
+        url="https://pratapaditya.com/favorites"
+      />
       <h1 className="mb-2 text-3xl font-bold text-slate-100">Favorites</h1>
       <p className="mb-10 text-lg text-slate-400">
         A curated list of things I love and recommend.
