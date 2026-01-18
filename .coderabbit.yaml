@@ -1,6 +1,7 @@
 # .coderabbit.yaml
 language: 'en-US'
 early_access: false
+
 reviews:
   profile: 'chill'
   request_changes_workflow: false
@@ -8,16 +9,13 @@ reviews:
   auto_review:
     enabled: true
     drafts: false
-  tools:
-    ast-grep:
-      enabled: true
+
+  path_filters:
+    - 'package-lock.json'
+    - 'dist/**'
+    - 'node_modules/**'
+    - '*.svg'
+    - 'public/**'
 
 chat:
   auto_reply: true
-
-path_filters:
-  - 'package-lock.json'
-  - 'dist/**'
-  - 'node_modules/**'
-  - '*.svg'
-  - 'public/**'

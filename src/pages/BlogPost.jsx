@@ -26,7 +26,6 @@ const BlogPost = () => {
       <SEO
         title={article.title}
         description={article.description}
-        image={article.thumbnail}
         url={`https://pratapaditya.com/blog/${slug}`}
       />
 

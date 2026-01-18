@@ -21,9 +21,13 @@ const PostCard = ({ article }) => {
 
   const readingTime = calculateReadingTime(content || '');
 
-  const cleanDescription = description
-    ? description.replace(/<[^>]+>/g, '').substring(0, 160) + '...'
-    : '';
+  const cleanDescription = (() => {
+    if (!description) return '';
+    const stripped = description.replace(/<[^>]+>/g, '');
+    return stripped.length > 160
+      ? stripped.substring(0, 160) + '...'
+      : stripped;
+  })();
 
   // Shared CSS Classes
   const cardClasses =
