@@ -11,17 +11,21 @@ import {
   Cpu,
 } from 'lucide-react';
 
-const Section = ({ icon: Icon, title, children }) => (
-  <div className="mb-10">
-    <div className="mb-4 flex items-center gap-3 text-green-400">
-      <Icon size={24} />
-      <h2 className="text-xl font-bold text-slate-100">{title}</h2>
+const Section = ({ icon, title, children }) => {
+  const Icon = icon;
+
+  return (
+    <div className="mb-10">
+      <div className="mb-4 flex items-center gap-3 text-green-400">
+        <Icon size={24} />
+        <h2 className="text-xl font-bold text-slate-100">{title}</h2>
+      </div>
+      <div className="space-y-4 pl-9 leading-relaxed text-slate-400">
+        {children}
+      </div>
     </div>
-    <div className="space-y-4 pl-9 leading-relaxed text-slate-400">
-      {children}
-    </div>
-  </div>
-);
+  );
+};
 
 const Link = ({ href, children }) => (
   <a
