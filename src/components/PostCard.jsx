@@ -30,7 +30,7 @@ const PostCard = ({ article }) => {
     'group flex flex-col h-full rounded-xl border border-transparent bg-slate-800 p-6 transition-all duration-300 hover:bg-slate-800/80 hover:shadow-lg hover:ring-1 hover:shadow-green-900/20 hover:ring-green-400 cursor-pointer';
 
   // The Inner Content
-  const CardContent = () => (
+  const cardContent = (
     <>
       <div className="flex-1">
         <h3 className="mb-3 text-xl leading-tight font-bold text-slate-100 transition-colors group-hover:text-green-400">
@@ -60,7 +60,7 @@ const PostCard = ({ article }) => {
   if (isLocal) {
     return (
       <Link to={link} className={cardClasses}>
-        <CardContent />
+        {cardContent}
       </Link>
     );
   }
@@ -72,7 +72,7 @@ const PostCard = ({ article }) => {
       rel="noopener noreferrer"
       className={cardClasses}
     >
-      <CardContent />
+      {cardContent}
     </a>
   );
 };
