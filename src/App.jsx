@@ -4,6 +4,7 @@ import Sidebar from './components/Sidebar';
 import Home from './pages/Home';
 import About from './pages/About';
 import Favorites from './pages/Favorites';
+import AnalyticsTracker from './components/AnalyticsTracker';
 import { Menu } from 'lucide-react';
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <AnalyticsTracker />
       <div className="flex min-h-screen bg-slate-900 text-slate-200">
         {/* MOBILE HEADER (Visible only on small screens) */}
         <div className="fixed top-0 right-0 left-0 z-40 flex h-16 items-center border-b border-slate-800 bg-slate-900 px-4 md:hidden">
