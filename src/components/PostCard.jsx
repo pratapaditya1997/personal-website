@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, Clock } from 'lucide-react';
+import { calculateReadingTime } from '../utils/readingTime';
 
 const PostCard = ({ article }) => {
   const { title, pubDate, link, description, content, isLocal } = article;
@@ -11,15 +12,8 @@ const PostCard = ({ article }) => {
     day: 'numeric',
   });
 
-  const calculateReadingTime = (text) => {
-    if (!text) return '1 min read';
-    const stripped = text.replace(/<[^>]+>/g, '');
-    const words = stripped.trim().split(/\s+/).length;
-    const minutes = Math.ceil(words / 200);
-    return `${minutes} min read`;
-  };
-
-  const readingTime = calculateReadingTime(content || '');
+  const minutes = calculateReadingTime(content || '');
+  const readingTime = `${minutes} min read`;
 
   const cleanDescription = (() => {
     if (!description) return '';

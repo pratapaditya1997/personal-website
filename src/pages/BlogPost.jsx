@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import Markdown from 'react-markdown';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { getArticleBySlug } from '../utils/articleLoader';
+import { calculateReadingTime } from '../utils/readingTime';
 import SEO from '../components/SEO';
 
 const BlogPost = () => {
@@ -17,9 +18,7 @@ const BlogPost = () => {
 
   if (!article) return null;
 
-  // Simple reading time estimate
-  const words = article.content.split(' ').length;
-  const readTime = Math.ceil(words / 200);
+  const readTime = calculateReadingTime(article.content);
 
   return (
     <div className="mx-auto max-w-3xl px-4 pt-4 pb-20">
