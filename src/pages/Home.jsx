@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PostCard from '../components/PostCard';
+import SEO from '../components/SEO';
 import { Loader2 } from 'lucide-react';
 
 const RSS_URL = `https://api.rss2json.com/v1/api.json?rss_url=https://pratapaditya1997.substack.com/feed`;
@@ -25,6 +26,10 @@ export default function Home() {
 
   return (
     <div className="mx-auto max-w-5xl pt-4">
+      <SEO
+        title="Home"
+        description="Personal website of Aditya Pratap Singh, a Senior Software Engineer at Google. Writing about distributed systems and philosophy."
+      />
       {/* Header Section - Updated Copy */}
       <header className="mb-12">
         <h1 className="mb-4 text-4xl font-bold tracking-tight text-slate-100">

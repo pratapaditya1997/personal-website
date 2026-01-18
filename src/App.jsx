@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Favorites from './pages/Favorites';
 import AnalyticsTracker from './components/AnalyticsTracker';
+import Now from './pages/Now';
 import { Menu } from 'lucide-react';
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/favorites" element={<Favorites />} />
+            <Route path="/now" element={<Now />} />
           </Routes>
         </main>
       </div>

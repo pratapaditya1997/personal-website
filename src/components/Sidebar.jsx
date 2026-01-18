@@ -1,6 +1,15 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Github, Twitter, Linkedin, Home, User, Star, X } from 'lucide-react';
+import {
+  Github,
+  Twitter,
+  Linkedin,
+  Home,
+  User,
+  Star,
+  X,
+  Clock,
+} from 'lucide-react';
 
 const SocialLink = ({ href, icon }) => {
   const Icon = icon;
@@ -9,7 +18,7 @@ const SocialLink = ({ href, icon }) => {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="text-slate-400 hover:text-green-400 transition-colors duration-200"
+      className="text-slate-400 transition-colors duration-200 hover:text-green-400"
     >
       <Icon size={24} />
     </a>
@@ -97,6 +106,10 @@ const Sidebar = ({ isOpen, onClose }) => {
           >
             <Star size={20} />
             <span>Favorites</span>
+          </Link>
+          <Link to="/now" className={linkClass('/now')} onClick={onClose}>
+            <Clock size={20} />
+            <span>Now</span>
           </Link>
         </nav>
 
