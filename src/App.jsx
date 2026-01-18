@@ -6,6 +6,7 @@ import About from './pages/About';
 import Favorites from './pages/Favorites';
 import AnalyticsTracker from './components/AnalyticsTracker';
 import Now from './pages/Now';
+import BlogPost from './pages/BlogPost';
 import { Menu } from 'lucide-react';
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/favorites" element={<Favorites />} />
             <Route path="/now" element={<Now />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
           </Routes>
         </main>
       </div>

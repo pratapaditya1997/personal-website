@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PostCard from '../components/PostCard';
 import SEO from '../components/SEO';
+import { getLocalArticles } from '../utils/articleLoader';
 import { Loader2 } from 'lucide-react';
 
 const RSS_URL = `https://api.rss2json.com/v1/api.json?rss_url=https://pratapaditya1997.substack.com/feed`;
@@ -10,27 +11,46 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(RSS_URL)
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.items) {
-          setPosts(data.items);
+    const fetchData = async () => {
+      try {
+        let rssArticles = [];
+        try {
+          const response = await fetch(RSS_URL);
+          const data = await response.json();
+          if (data.items) {
+            rssArticles = data.items.map((item) => ({
+              ...item,
+              isLocal: false,
+            }));
+          }
+        } catch (rssError) {
+          console.error('Error fetching Substack feed:', rssError);
         }
+
+        const localArticles = getLocalArticles();
+
+        const allArticles = [...rssArticles, ...localArticles].sort((a, b) => {
+          return new Date(b.pubDate) - new Date(a.pubDate);
+        });
+
+        setPosts(allArticles);
+      } catch (error) {
+        console.error('Critical error loading articles:', error);
+      } finally {
         setLoading(false);
-      })
-      .catch((error) => {
-        console.error('Error fetching Substack feed:', error);
-        setLoading(false);
-      });
+      }
+    };
+
+    fetchData();
   }, []);
 
   return (
-    <div className="mx-auto max-w-5xl pt-4">
+    <div className="mx-auto max-w-5xl pt-4 pb-20">
       <SEO
         title="Home"
         description="Personal website of Aditya Pratap Singh, a Senior Software Engineer at Google. Writing about distributed systems and philosophy."
       />
-      {/* Header Section - Updated Copy */}
+      {/* Header Section */}
       <header className="mb-12">
         <h1 className="mb-4 text-4xl font-bold tracking-tight text-slate-100">
           Aditya Pratap Singh
@@ -63,15 +83,9 @@ export default function Home() {
 
         {/* GRID LAYOUT */}
         <div className="grid gap-6 md:grid-cols-2">
-          {posts.map((post) => (
-            <PostCard
-              key={post.guid}
-              title={post.title}
-              pubDate={post.pubDate}
-              link={post.link}
-              content={post.content}
-              description={post.description}
-            />
+          {posts.map((post, index) => (
+            // We use 'index' as fallback key because RSS guids might collide with local slugs in rare edge cases
+            <PostCard key={post.guid || index} article={post} />
           ))}
         </div>
       </section>
