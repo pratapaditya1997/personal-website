@@ -5,5 +5,8 @@
   # The folder where Vite puts the finished website
   publish = "dist"
 
+[build.environment]
+  NODE_VERSION = "22"
+
 [dev]
   command = "npm run dev"
